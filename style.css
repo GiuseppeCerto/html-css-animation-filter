@@ -165,6 +165,15 @@
     text-decoration: none;
 }
 
+.ex-12-bottom-white, .ex-13-bottom-white {
+    position: absolute;
+    bottom: -10px;
+    right: 20%;
+    background: #f5f5f5;
+    width: 60px;
+    height: 20px;
+}
+
 .ex-12-top-white, .ex-13-top-white {
     position: absolute;
     top: -10px;
@@ -174,30 +183,102 @@
     height: 20px;
     transition: ;
 }
-.ex-12-top-white:hover{
-    animation: ex-12-top-move;
-	animation-iteration-count: infinite;
-}
-@keyframes ex-12-top-move{
 
-    0%{
-        animation: translate(10px);
-    }
-    100%{
-        animation: translate(40px)
-    }
-}
 
-.ex-12-bottom-white:hover{
+
+.ex-12-top-white:hover .ex-12-top-white{
+    animation: ex-12-top 2s 2 linear alternate;
+    animation-fill-mode: forwards;
+}
+    @keyframes ex-12-top{
+
+        from {
+            left:10%
+        }
+        to {
+            left: 65%;
+        }
+    }
+
     
-}
+.ex-12-bottom-white:hover .ex-12-bottom-white{
+    animation: ex-12-bottom 2s 2 linear alternate;
+    animation-fill-mode: forwards;
+}   
+
+    @keyframes ex-12-bottom{
+
+        from {
+            left:10%
+        }
+        to {
+            left: 60%;
+        }
+    }
 
 
-.ex-12-bottom-white, .ex-13-bottom-white {
-    position: absolute;
-    bottom: -10px;
-    right: 20%;
-    background: #f5f5f5;
-    width: 60px;
-    height: 20px;
-}
+    .ex-13-top-white .ex-13-bottom-white{
+        transform: translateX(-50%) translatey(-50%) ;
+    }
+    .ex-13-top-white:hover .ex-13-top-white{
+        animation: ex-13-top;
+    }
+
+    @keyframes ex-13-top{
+
+        0% {
+            top: 0%;
+            left: 20%;
+        }
+        32% {
+            top: 0%;
+            left: 100%;
+        }
+        42%{
+            top: 100%;
+            left: 100%;
+        }
+        82%{
+            top: 100%;
+            left: 0%;
+        }
+        92%{
+            top: 0%;
+            left: 0%;
+        }
+        100%{
+            top: 0%;
+            left: 20%;
+        }
+    }
+
+    .ex-13-button:hover .ex-13-bottom-white {
+        animation: ex-13-top;
+    }
+    @keyframes ex-13-bottom{
+
+        0% {
+            left:80%;
+            top:100%;
+        }
+        32% {
+            top: 0%;
+            left: 0%;
+        }
+        42%{
+            top: 0%;
+            left: 20%;
+        }
+        82%{
+            top: 0%;
+            left: 20%;
+        }
+        92%{
+            top: 0%;
+            left: 100%;
+        }
+        100%{
+            left:80%;
+            top:100%;
+        }
+    }
